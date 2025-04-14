@@ -6,7 +6,7 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed right-0 top-0 w-full backdrop-blur-md z-50'>
+    <div className='fixed left-0 right-0 top-0 w-full backdrop-blur-md z-50'>
 
       <div className='max-w-7xl mx-auto h-[80px] flex justify-between items-center px-4 text-gray-300'>
         {/* LOGO */}

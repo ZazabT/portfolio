@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <div className='w-full min-h-screen flex items-center justify-center py-28 px-4 sm:px-8 bg-gradient-to-b from-white to-amber-50'>
+    <div className='w-full bg- min-h-screen flex items-center justify-center py-28 px-4 sm:px-8 bg-gradient-to-b from-white to-amber-50'>
       <div className='max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16'>
         {/* Left side hero section */}
         <div className='w-full md:w-1/2 flex items-start flex-col gap-10 p-4'>
