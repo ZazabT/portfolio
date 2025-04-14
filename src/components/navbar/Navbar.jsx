@@ -10,17 +10,32 @@ const Navbar = () => {
 
       <div className='max-w-7xl mx-auto h-[80px] flex justify-between items-center px-4 text-gray-300'>
         {/* LOGO */}
-        <div>
-          <h1 className='font-bold text-3xl text-black'>Tizazab.</h1>
+        <div className='hover:scale-125 hover:-rotate-6 transition-transform duration-700  '>
+          <h1 className='font-bold text-3xl text-black hover:text-amber-900'>Tizazab.</h1>
         </div>
 
         {/* menu */}
-        <ul className='hidden md:flex items-center'>
-          <li className='px-4 cursor-pointer text-black duration-300'>Home</li>
-          <li className='px-4 cursor-pointer text-black duration-300'>About</li>
-          <li className='px-4 cursor-pointer text-black duration-300'>Skills</li>
-          <li className='px-4 cursor-pointer text-black duration-300'>Projects</li>
-          <li className='px-4 cursor-pointer text-black duration-300'>Contact</li>
+        <ul className='hidden md:flex items-center gap-2'>
+          <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
+            <span className='duration-700'>Home</span>
+            <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+          </li>
+          <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
+            <span className='duration-700'>About</span>
+            <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+          </li>
+          <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
+            <span className='duration-700'>Skills</span>
+            <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+          </li>
+          <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
+            <span className='duration-700'>Projects</span>
+            <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+          </li>
+          <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
+            <span className='duration-700'>Contact</span>
+            <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
+          </li>
         </ul>
 
         {/* hamburger */}
