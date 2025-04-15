@@ -40,12 +40,15 @@ const Hero = () => {
           </p>
 
           <div className='flex flex-col gap-8 w-full'>
-            <button className='text-amber-900 group border-2 border-amber-900 px-10 py-4 text-lg flex items-center hover:bg-amber-950 hover:text-white duration-300 rounded-lg font-semibold shadow-lg w-fit'>
+           <a href="#projects">
+           <button className='text-amber-900 group border-2 border-amber-900 px-10 py-4 text-lg flex items-center hover:bg-amber-950 hover:text-white duration-300 rounded-lg font-semibold shadow-lg w-fit'>
               View Work 
               <span className='group-hover:translate-x-3 duration-500'>
                 <HiArrowNarrowRight className='ml-4 text-2xl' />
               </span>
             </button>
+            </a> 
+            
 
             {/* contact me div */}
             <div className='space-y-4'>
@@ -83,16 +86,8 @@ const Hero = () => {
           {/* Circles */}
           <div className='absolute top-8 -left-10 w-24 h-24 bg-amber-400/40 rounded-full mix-blend-multiply animate-pulse hidden md:block'></div>
           <div className='absolute bottom-20 right-0 w-36 h-36 bg-orange-300/40 rounded-full mix-blend-multiply animate-pulse delay-150 hidden md:block'></div>
-          
-          {/* Squares */}
         
-          
-          {/* Hexagons (using clip-path) */}
-          {/* <div className='absolute top-1/2 -left-8 w-28 h-28 bg-amber-300/40 mix-blend-multiply animate-pulse delay-500 clip-path-hexagon hidden md:block'></div>
-          <div className='absolute top-20 right-4 w-20 h-20 bg-orange-250/40 mix-blend-multiply animate-pulse delay-700 clip-path-hexagon hidden md:block'></div>
-          <div className='absolute top-10 -left-4 w-20 h-20 bg-amber-300 rounded-full mix-blend-multiply animate-pulse'></div>
-          <div className='absolute bottom-10 -right-4 w-32 h-32 bg-amber-400 rounded-full mix-blend-multiply animate-pulse delay-150'></div>
-          <div className='absolute top-1/2 right-0 w-16 h-16 bg-amber-250 rounded-lg rotate-45 mix-blend-multiply animate-pulse delay-300'></div> */}
+        
           
           <div className='absolute top-20 -left-4 w-20 h-20 bg-amber-300 rounded-full mix-blend-multiply animate-pulse'></div>
           <div className='absolute bottom-20 -right-4 w-32 h-32 bg-amber-400 rounded-full mix-blend-multiply animate-pulse delay-150'></div>
