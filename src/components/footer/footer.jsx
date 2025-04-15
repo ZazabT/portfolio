@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo/Brand */}
           <div className='flex items-center gap-2 text-2xl font-bold text-gray-800 hover:scale-110 transition-transform duration-300'>
             <FaCode className='text-amber-900' />
-            <span>Tizazab</span>
+            <a href="#home"><span className='hover:scale-125 hover:text-amber-950'>Tizazab</span></a>
           </div>
 
           {/* Social Links */}

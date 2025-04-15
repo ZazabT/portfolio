@@ -18,7 +18,7 @@ const Project = () => {
       title: 'EthioFund',
       description: 'Crowdfunding platform for Ethiopian projects with secure payment integration using Chapa payment gateway.',
       image: ethiofund,
-      tech: ['Laravel', 'MySQL', 'Chapa', 'Bootstrap'],
+      tech: ['Laravel', 'MySQL', 'Chapa', 'Tailwind CSS'],
       github: 'https://github.com/ZazabT/ethiofund10ChapaTry', 
       live: '#'
     },
@@ -41,12 +41,12 @@ const Project = () => {
   ];
 
   return (
-    <div name='projects' className='w-full min-h-screen py-20'>
+    <div name='projects' id='projects' className='w-full min-h-screen py-20'>
       <div className='max-w-7xl mx-auto px-4 sm:px-8'>
         {/* Header */}
         <div className='text-center mb-16 space-y-4'>
           <span className='text-amber-900 text-sm font-medium tracking-[0.2em] uppercase'>Portfolio</span>
-          <h2 className='text-4xl sm:text-5xl font-bold text-gray-800'>Featured Projects</h2>
+          <h2 className='text-4xl sm:text-5xl font-bold text-gray-800'>Projects</h2>
           <p className='text-gray-600 max-w-2xl mx-auto'>
             Showcasing my best work and creative solutions
           </p>

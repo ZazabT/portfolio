@@ -42,7 +42,7 @@ const Service = () => {
   ];
 
   return (
-    <div name='services' className='w-full min-h-screen py-20'>
+    <div name='services' id='services' className='w-full min-h-screen py-20'>
       <div className='max-w-7xl mx-auto px-4 sm:px-8'>
         {/* Header */}
         <div className='text-center mb-16 space-y-4'>

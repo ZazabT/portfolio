@@ -6,34 +6,34 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed left-0 right-0 top-0 w-full backdrop-blur-2xl z-50 shadow-xl'>
+    <div className='fixed left-0 right-0 top-0 w-full backdrop-blur-2xl z-50'>
 
       <div className='max-w-7xl mx-auto h-[80px] flex justify-between items-center px-4 text-gray-300'>
         {/* LOGO */}
         <div className='hover:scale-125 hover:-rotate-6 transition-transform duration-700  '>
-          <h1 className='font-bold text-3xl text-black hover:text-amber-900'>Tizazab.</h1>
+         <a href="#home"><h1 className='font-bold text-3xl text-black hover:text-amber-900'>Tizazab.</h1></a> 
         </div>
 
         {/* menu */}
         <ul className='hidden md:flex items-center gap-2'>
           <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
-            <span className='duration-700'>Home</span>
+            <a href='#home' className='duration-700'>Home</a>
             <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
           </li>
           <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
-            <span className='duration-700'>About</span>
+            <a href='#about' className='duration-700'>About</a>
             <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
           </li>
           <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
-            <span className='duration-700'>Skills</span>
+            <a href='#services' className='duration-700'>Services</a>
             <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
           </li>
           <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
-            <span className='duration-700'>Projects</span>
+            <a href='#projects' className='duration-700'>Projects</a>
             <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
           </li>
           <li className='px-4 py-2 font-medium cursor-pointer text-gray-800 hover:text-amber-900 relative group'>
-            <span className='duration-700'>Contact</span>
+            <a href='#contact' className='duration-700'>Contact</a>
             <span className='absolute bottom-0 left-0 w-full h-0.5 bg-amber-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300'></span>
           </li>
         </ul>

@@ -3,7 +3,7 @@ import { FaCode, FaServer, FaMobile, FaDatabase } from 'react-icons/fa';
 
 const About = () => {
   return (
-    <div name='about' className='w-full min-h-screen'>
+    <div name='about' id='about' className='w-full min-h-screen py-20'>
       <div className='max-w-7xl mx-auto px-4 sm:px-8'>
         {/* Section Header */}
         <div className='pb-16 w-full text-center space-y-4 animate-fade-up'>
@@ -108,7 +108,7 @@ const About = () => {
             { number: '10+', text: 'Happy Clients' },
             { number: '5+', text: 'Technologies' }
           ].map((item, index) => (
-            <div key={index} className='glass-effect rounded-2xl p-6 text-center transform hover:-translate-y-2 transition-all duration-300 shadow-xl group'>
+            <div key={index} className='p-6 text-center transform hover:-translate-y-2 transition-all duration-300'>
               <h3 className='text-4xl font-bold gradient-text text-amber-900 mb-2 group-hover:scale-110 transition-transform duration-300'>{item.number}</h3>
               <p className='text-gray-500 font-medium'>{item.text}</p>
             </div>

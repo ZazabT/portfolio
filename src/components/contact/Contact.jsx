@@ -8,7 +8,7 @@ const Contact = () => {
   };
 
   return (
-    <div name='contact' className='w-full min-h-screen py-20'>
+    <div name='contact' id='contact' className='w-full min-h-screen py-20 '>
       <div className='max-w-7xl mx-auto px-4 sm:px-8'>
         {/* Header */}
         <div className='text-center mb-16 space-y-4'>
