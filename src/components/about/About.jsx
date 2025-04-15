@@ -57,7 +57,7 @@ const About = () => {
                 {/* Progress bars with enhanced styling */}
                 {[
                   { name: 'React.js', level: '90%' },
-                  { name: 'JavaScript', level: '85%' },
+                  { name: 'laravel', level: '85%' },
                   { name: 'Tailwind CSS', level: '95%' },
                   { name: 'Node.js', level: '80%' },
                   { name: 'MongoDB', level: '75%' }
