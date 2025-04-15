@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { ReactTyped } from "react-typed";
-import myImage from '../../assets/me.png';
+import myImage from '../../assets/profile2.jpg';
 import arrow from '../../assets/arrow.webp';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 
@@ -82,32 +82,31 @@ const Hero = () => {
         <div className='md:w-1/2  flex justify-center items-center p-8 relative'>
           {/* Floating shapes */}
           {/* Circles */}
-          <div className='absolute top-8 -left-10 w-24 h-24 bg-amber-200/40 rounded-full mix-blend-multiply animate-pulse hidden md:block'></div>
-          <div className='absolute bottom-20 right-0 w-36 h-36 bg-orange-100/40 rounded-full mix-blend-multiply animate-pulse delay-150 hidden md:block'></div>
+          <div className='absolute top-8 -left-10 w-24 h-24 bg-amber-400/40 rounded-full mix-blend-multiply animate-pulse hidden md:block'></div>
+          <div className='absolute bottom-20 right-0 w-36 h-36 bg-orange-300/40 rounded-full mix-blend-multiply animate-pulse delay-150 hidden md:block'></div>
           
           {/* Squares */}
-          <div className='absolute top-1/3 -left-6 w-16 h-16 bg-amber-50/40 rounded-lg rotate-12 mix-blend-multiply animate-pulse delay-300 hidden md:block'></div>
-          <div className='absolute bottom-32 right-10 w-20 h-20 bg-orange-200/40 rounded-lg -rotate-12 mix-blend-multiply animate-pulse delay-200 hidden md:block'></div>
+        
           
           {/* Hexagons (using clip-path) */}
-          <div className='absolute top-1/2 -left-8 w-28 h-28 bg-amber-100/40 mix-blend-multiply animate-pulse delay-500 clip-path-hexagon hidden md:block'></div>
-          <div className='absolute top-20 right-4 w-20 h-20 bg-orange-50/40 mix-blend-multiply animate-pulse delay-700 clip-path-hexagon hidden md:block'></div>
-          <div className='absolute top-10 -left-4 w-20 h-20 bg-amber-100 rounded-full mix-blend-multiply animate-pulse'></div>
-          <div className='absolute bottom-10 -right-4 w-32 h-32 bg-amber-200 rounded-full mix-blend-multiply animate-pulse delay-150'></div>
-          <div className='absolute top-1/2 right-0 w-16 h-16 bg-amber-50 rounded-lg rotate-45 mix-blend-multiply animate-pulse delay-300'></div>
+          {/* <div className='absolute top-1/2 -left-8 w-28 h-28 bg-amber-300/40 mix-blend-multiply animate-pulse delay-500 clip-path-hexagon hidden md:block'></div>
+          <div className='absolute top-20 right-4 w-20 h-20 bg-orange-250/40 mix-blend-multiply animate-pulse delay-700 clip-path-hexagon hidden md:block'></div>
+          <div className='absolute top-10 -left-4 w-20 h-20 bg-amber-300 rounded-full mix-blend-multiply animate-pulse'></div>
+          <div className='absolute bottom-10 -right-4 w-32 h-32 bg-amber-400 rounded-full mix-blend-multiply animate-pulse delay-150'></div>
+          <div className='absolute top-1/2 right-0 w-16 h-16 bg-amber-250 rounded-lg rotate-45 mix-blend-multiply animate-pulse delay-300'></div> */}
           
-          <div className='absolute top-20 -left-4 w-20 h-20 bg-amber-100 rounded-full mix-blend-multiply animate-pulse'></div>
-          <div className='absolute bottom-20 -right-4 w-32 h-32 bg-amber-200 rounded-full mix-blend-multiply animate-pulse delay-150'></div>
-          <div className='absolute top-1/2 right-4 w-16 h-16 bg-amber-50 rounded-lg rotate-45 mix-blend-multiply animate-pulse delay-300'></div>
+          <div className='absolute top-20 -left-4 w-20 h-20 bg-amber-300 rounded-full mix-blend-multiply animate-pulse'></div>
+          <div className='absolute bottom-20 -right-4 w-32 h-32 bg-amber-400 rounded-full mix-blend-multiply animate-pulse delay-150'></div>
+          <div className='absolute top-1/2 right-4 w-16 h-16 bg-amber-250 rounded-lg rotate-45 mix-blend-multiply animate-pulse delay-300'></div>
           {/* Image container */}
-          <div className='relative z-10 w-[400px] h-[400px] bg-gradient-to-b  p-4 rounded-2xl'>
-            <div className='w-full h-full relative overflow-hidden rounded-4xl'>
+          <div className=' w-full h-full '>
+            
               <img 
                 src={myImage} 
                 alt="Profile" 
-                className='w-full h-full object-cover object-center hover:scale-105 transition-all duration-500'
+                className='object-cover object-center transition-all duration-500'
               />              
-            </div>
+
           </div>
           
         </div>
