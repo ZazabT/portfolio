@@ -17,7 +17,7 @@ const Project = () => {
     {
       title: 'EthioFund',
       description: 'Crowdfunding platform for Ethiopian projects with secure payment integration using Chapa payment gateway.',
-      image: '../../assets/fund.jpg',
+      image: ethiofund,
       tech: ['Laravel', 'MySQL', 'Chapa', 'Bootstrap'],
       github: 'https://github.com/ZazabT/ethiofund10ChapaTry', 
       live: '#'
@@ -25,7 +25,7 @@ const Project = () => {
     {
       title: 'Tafach Recipe',
       description: 'Ethiopian food recipe sharing platform with user contributions and recipe search functionality.',
-      image: '../assets/recipe.jpg',
+      image: tafach,
       tech: ['React', 'Node.js', 'MongoDB', 'Express'],
       github: 'https://github.com/ZazabT/Tafach',
       live: '#'
@@ -33,7 +33,7 @@ const Project = () => {
     {
       title: 'Voice Assistant',
       description: 'Mobile voice assistant app powered by Gemini AI for natural language processing and voice commands.',
-      image: '../assets/voice_assistent.jpg',
+      image: voice_assistant,
       tech: ['Flutter', 'Dart', 'Gemini AI', 'Firebase'],
       github: 'https://github.com/ZazabT/Voice-Assistant',
       live: '#'
