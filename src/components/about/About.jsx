@@ -103,7 +103,7 @@ const About = () => {
         {/* Experience Counter with enhanced styling */}
         <div className='grid grid-cols-2 md:grid-cols-4 gap-6 mt-16'>
           {[
-            { number: '2+', text: 'Years Experience' },
+            { number: '1+', text: 'Years Experience' },
             { number: '20+', text: 'Projects Completed' },
             { number: '10+', text: 'Happy Clients' },
             { number: '5+', text: 'Technologies' }
