@@ -4,6 +4,8 @@ import airbnb from '../../assets/airbnb.jpg';
 import ethiofund from '../../assets/fund.jpg';
 import tafach from '../../assets/recipe.jpg';
 import voice_assistant from '../../assets/voice_assistent.jpg';
+import tech_blog from '../../assets/tech-blog.jpg';
+import job_portal from '../../assets/job_portal.jpg';
 const Project = () => {
   const projects = [
     {
@@ -41,17 +43,17 @@ const Project = () => {
     {
       title: 'Tech Blog',
       description: 'Dynamic blog platform with markdown support, comment system, and content management.',
-      image: '/tech-blog.jpg',
+      image: tech_blog,
       tech: ['Next.js', 'MongoDB', 'Tailwind CSS', 'NextAuth'],
-      github: '#',
+      github: 'https://github.com/ZazabT/Blog',
       live: '#'
     },
       {
-      title: 'Job Portal',
+      title: '/Job Portal',
       description: 'Modern job listing platform with real-time updates, advanced search, and application tracking system.',
-      image: '/job-portal.jpg',
+      image: job_portal,
       tech: ['Next.js', 'Drizzle ORM', 'PostgreSQL', 'Tailwind CSS'],
-      github: '#',
+      github: 'https://github.com/ZazabT/jobhub',
       live: '#'
     },
 
