@@ -49,7 +49,7 @@ const Project = () => {
       live: '#'
     },
       {
-      title: '/Job Portal',
+      title: 'Job Portal',
       description: 'Modern job listing platform with real-time updates, advanced search, and application tracking system.',
       image: job_portal,
       tech: ['Next.js', 'Drizzle ORM', 'PostgreSQL', 'Tailwind CSS'],

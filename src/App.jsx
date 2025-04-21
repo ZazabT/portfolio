@@ -36,10 +36,30 @@ function App() {
       viewport: { once: true }
     },
     projects: {
-      initial: { y: 80, opacity: 0 },
-      whileInView: { y: 0, opacity: 1 },
-      transition: { duration: 1, type: 'spring', stiffness: 120 },
-      viewport: { once: true }
+      initial: { 
+        y: 100, 
+        opacity: 0, 
+        scale: 0.8, 
+        rotate: -10 
+      },
+      whileInView: { 
+        y: 0, 
+        opacity: 1, 
+        scale: 1, 
+        rotate: 0 
+      },
+      transition: { 
+        duration: 1.2, 
+        type: 'spring', 
+        stiffness: 150, 
+        damping: 15, 
+        mass: 0.8, 
+        bounce: 0.4 
+      },
+      viewport: { 
+        once: true, 
+        margin: '0px 0px -100px 0px' 
+      }
     },
     contact: {
       initial: { x: 100, opacity: 0, scale: 0.95 },

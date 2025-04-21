@@ -3,13 +3,14 @@ import { HiArrowNarrowRight } from 'react-icons/hi';
 import { ReactTyped } from "react-typed";
 import myImage from '../../assets/pro__backremoved.png';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { motion } from 'motion/react';
 
 const Hero = () => {
   return (
-    <div id='home' className='w-full bg- min-h-screen flex items-center justify-center py-28 px-4 sm:px-8'>
+    <div id='home' className='w-full bg- min-h-screen flex items-center justify-center py-28 px-4 '>
       <div className='max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-16'>
         {/* Left side hero section */}
-        <div className='w-full md:w-1/2 flex items-start flex-col gap-10 p-4'>
+        <div className='w-full md:w-1/2  flex items-start flex-col gap-10 p-4'>
           <div className='space-y-2'>
             <span className='text-amber-900 text-sm font-medium tracking-widest uppercase'>Welcome to my portfolio</span>
             <p className='text-gray-700 text-2xl font-semibold tracking-wide'>
@@ -17,7 +18,7 @@ const Hero = () => {
             </p>
           </div>
 
-          <h2 className='text-2xl sm:text-4xl font-bold text-gray-800 leading-relaxed flex gap-3'>
+          <h2 className='text-xl bg-amber-100 rounded-2xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl font-bold text-gray-800 leading-relaxed flex gap-2 sm:gap-3 md:gap-4'>
             I'm a{' '}
             <ReactTyped
               strings={[
@@ -29,7 +30,7 @@ const Hero = () => {
               typeSpeed={40}
               backSpeed={50}
               loop
-              className='text-amber-900 border-b-2 border-amber-200'
+              className='text-amber-900 border-b-2 border-amber-400'
             />
           </h2>
 
@@ -81,7 +82,7 @@ const Hero = () => {
         </div>
 
         {/* Right side hero section */}
-        <div className='md:w-1/2  flex justify-center items-center p-8 relative'>
+        <div className='md:w-1/2   flex justify-center items-center p-8 relative'>
           {/* Floating shapes */}
           {/* Circles */}
           <div className='absolute top-8 -left-10 w-24 h-24 bg-amber-400/40 rounded-full mix-blend-multiply animate-pulse hidden md:block'></div>
