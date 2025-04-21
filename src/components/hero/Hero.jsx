@@ -42,13 +42,39 @@ const Hero = () => {
 
           <div className='flex flex-col gap-8 w-full'>
            <a href="#projects">
-           <button className='text-amber-900 group border-2 border-amber-900 px-10 py-4 text-lg flex items-center hover:bg-amber-950 hover:text-white duration-300 rounded-lg font-semibold shadow-lg w-fit'>
-              View Work 
-              <span className='group-hover:translate-x-3 duration-500'>
-                <HiArrowNarrowRight className='ml-4 text-2xl' />
-              </span>
-            </button>
-            </a> 
+             <motion.button
+               initial={{ opacity: 0, y: 40 }}
+               whileInView={{ 
+                 opacity: 1, 
+                 y: 0,
+                 transition: {
+                   type: "spring",
+                   stiffness: 100,
+                   damping: 10
+                 }
+               }}
+               whileHover={{ 
+                 scale: 1.10,
+                 boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)"
+               }}
+               whileTap={{ scale: 0.95 }}
+               className='text-amber-900 group border-2 border-amber-900 px-10 py-4 text-lg flex items-center hover:bg-amber-950 hover:text-white duration-300 rounded-lg font-semibold shadow-lg w-fit'
+             >
+               View Work 
+               <motion.span 
+                 className='ml-4'
+                 initial={{ x: 0 }}
+                 whileHover={{ x: 10 , rotate: 90 }}
+                 transition={{
+                   type: "spring",
+                   stiffness: 200,
+                   damping: 10
+                 }}
+               >
+                 <HiArrowNarrowRight className='text-2xl' />
+               </motion.span>
+             </motion.button>
+           </a> 
             
 
             {/* contact me div */}
