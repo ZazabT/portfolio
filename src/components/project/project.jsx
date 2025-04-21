@@ -37,7 +37,17 @@ const Project = () => {
       tech: ['Flutter', 'Dart', 'Gemini AI', 'Firebase'],
       github: 'https://github.com/ZazabT/Voice-Assistant',
       live: '#'
-    }
+    },
+    {
+      title: 'Tech Blog',
+      description: 'Dynamic blog platform with markdown support, comment system, and content management.',
+      image: '/tech-blog.jpg',
+      tech: ['Next.js', 'MongoDB', 'Tailwind CSS', 'NextAuth'],
+      github: '#',
+      live: '#'
+    },
+     
+
   ];
 
   return (
