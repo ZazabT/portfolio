@@ -32,11 +32,11 @@ function App() {
     services: {
       initial: { scale: 0.8, opacity: 0 },
       whileInView: { scale: 1, opacity: 1 },
-      transition: { duration: 0.7, type: 'spring', bounce: 0.4 },
+      transition: { duration: 0.8, type: 'spring', bounce: 0.8 },
       viewport: { once: true }
     },
     projects: {
-      initial: { y: 70, opacity: 0 },
+      initial: { y: 80, opacity: 0 },
       whileInView: { y: 0, opacity: 1 },
       transition: { duration: 1, type: 'spring', stiffness: 120 },
       viewport: { once: true }
@@ -50,7 +50,7 @@ function App() {
     footer: {
       initial: { y: 30, opacity: 0 },
       whileInView: { y: 0, opacity: 1 },
-      transition: { duration: 0.6 },
+      transition: { duration: 0.6  , type: 'spring', bounce: 0.8},
       viewport: { once: true }
     }
   };
@@ -58,7 +58,7 @@ function App() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-amber-900 origin-left z-100"
+        className="fixed overflow-x-hidden top-0 left-0 right-0 h-1 bg-amber-900 origin-left z-100"
         style={{ scaleX }}
       />
 
