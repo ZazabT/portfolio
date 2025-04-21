@@ -46,7 +46,14 @@ const Project = () => {
       github: '#',
       live: '#'
     },
-     
+      {
+      title: 'Job Portal',
+      description: 'Modern job listing platform with real-time updates, advanced search, and application tracking system.',
+      image: '/job-portal.jpg',
+      tech: ['Next.js', 'Drizzle ORM', 'PostgreSQL', 'Tailwind CSS'],
+      github: '#',
+      live: '#'
+    },
 
   ];
 
