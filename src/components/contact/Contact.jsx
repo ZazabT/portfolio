@@ -1,34 +1,67 @@
-import React from 'react';
+import {useState} from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
 import { toast } from 'sonner';
+import { FaSpinner } from 'react-icons/fa';
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // get the data from the target
-    const data = new FormData(e.target);
-    const object = Object.fromEntries(data);
-    const json = JSON.stringify(object);
+    try {
+      // Set loading state to true
+      setIsLoading(true);
+      const formData = new FormData(e.target);
+      
+      // Use the correct Vite environment variable prefix
+      formData.append('access_key', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
+      
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
 
-    //append the access key to the data
-    data.append('access_key', process.env.REACT_APP_WEB3FORMS_ACCESS_KEY);
-    // send the data to the server
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: data
-    });
+      const data = await response.json();
 
-    const result = await res.json();
-
-    if (result.success) {
-      toast.success("Message sent successfully");
-      e.target.reset();   
+      if (data.success) {
+        toast.success('Message sent successfully!', {
+          duration: 5000,
+          position: 'top-right',
+          icon: '✅',
+          style: {
+            background: '#f3f4f6',
+            color: '#78350f',
+          },
+        });
+        e.target.reset();
+      } else {
+        toast.error(data.message || 'Failed to send message', {
+          duration: 5000,
+          position: 'top-right',
+          icon: '❌',
+          style: {
+            background: '#f3f4f6',
+            color: '#78350f',
+          },
+        });
+      }
+    } catch (error) {
+      toast.error('Network error. Please try again later.', {
+        duration: 5000,
+        position: 'top-right',
+        icon: '⚠️',
+        style: {
+          background: '#f3f4f6',
+          color: '#78350f',
+        },
+      });
+      console.error('Form submission error:', error);
+    }finally {
+      // Set loading state to false after the request is complete
+      setIsLoading(false); 
     }
-    if (!result.success) {
-      toast.error(result.message); 
-    }
-
-    console.log(result);
   };
 
   return (
@@ -114,6 +147,8 @@ const Contact = () => {
                     type='text'
                     className='w-full px-4 py-3 rounded-lg bg-white/50 border border-amber-900 focus:outline-none focus:border-amber-900 focus:ring-2 focus:ring-amber-900/50 transition-all duration-300 placeholder:text-gray-400'
                     placeholder='John Doe'
+                    name='name'
+                    required
                   />
                 </div>
                 <div className='group'>
@@ -122,6 +157,8 @@ const Contact = () => {
                     type='email'
                     className='w-full px-4 py-3 rounded-lg bg-white/50 border border-amber-900 focus:outline-none focus:border-amber-900 focus:ring-2 focus:ring-amber-900/50 transition-all duration-300 placeholder:text-gray-400'
                     placeholder='john@example.com'
+                    name='email'
+                    required
                   />
                 </div>
               </div>
@@ -132,6 +169,8 @@ const Contact = () => {
                   type='text'
                   className='w-full px-4 py-3 rounded-lg bg-white/50 border border-amber-900 focus:outline-none focus:border-amber-900 focus:ring-2 focus:ring-amber-900/50 transition-all duration-300 placeholder:text-gray-400'
                   placeholder='Project Discussion'
+                  name='subject'
+                  required
                 />
               </div>
 
@@ -141,14 +180,26 @@ const Contact = () => {
                   rows='5'
                   className='w-full px-4 py-3 rounded-lg bg-white/50 border border-amber-900 focus:outline-none focus:border-amber-900 focus:ring-2 focus:ring-amber-900/50 transition-all duration-300 resize-none placeholder:text-gray-400'
                   placeholder='Your message here...'
+                  name='message'
+                  required
                 ></textarea>
               </div>
 
               <button
                 type='submit'
-                className='w-full py-4 px-8 bg-gradient-to-r from-amber-900 to-amber-800 text-white rounded-lg hover:from-amber-800 hover:to-amber-700 transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 font-medium relative overflow-hidden group'
+                disabled={isLoading}
+                className='w-full py-4 px-8 bg-gradient-to-r from-amber-900 to-amber-800 text-white rounded-lg hover:from-amber-800 hover:to-amber-700 transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 font-medium relative overflow-hidden group disabled:opacity-70 disabled:cursor-not-allowed'
               >
-                <span className='relative z-10'>Send Message</span>
+                <span className='relative z-10 flex items-center justify-center gap-2'>
+                  {isLoading ? (
+                    <>
+                      <FaSpinner className="animate-spin text-xl" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Message'
+                  )}
+                </span>
                 <div className='absolute inset-0 bg-gradient-to-r from-amber-800 to-amber-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left'></div>
               </button>
             </form>
