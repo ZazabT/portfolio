@@ -11,6 +11,7 @@ const Contact = () => {
       // Set loading state to true
       setIsLoading(true);
       const formData = new FormData(e.target);
+
       
       // Use the correct Vite environment variable prefix
       formData.append('access_key', import.meta.env.VITE_WEB3FORMS_ACCESS_KEY);
@@ -31,8 +32,11 @@ const Contact = () => {
           position: 'top-right',
           icon: '✅',
           style: {
-            background: '#f3f4f6',
+            background: '#fffbeb', 
+            border: '1px solid #78350f',
             color: '#78350f',
+            fontWeight: '500',
+            borderRadius: '8px',
           },
         });
         e.target.reset();
@@ -42,8 +46,11 @@ const Contact = () => {
           position: 'top-right',
           icon: '❌',
           style: {
-            background: '#f3f4f6',
+            background: '#fffbeb',
+            border: '1px solid #78350f',
             color: '#78350f',
+            fontWeight: '500',
+            borderRadius: '8px',
           },
         });
       }
@@ -53,8 +60,10 @@ const Contact = () => {
         position: 'top-right',
         icon: '⚠️',
         style: {
-          background: '#f3f4f6',
+          background: '#fffbeb', // amber-50
           color: '#78350f',
+          fontWeight: '500',
+          borderRadius: '8px',
         },
       });
       console.error('Form submission error:', error);
