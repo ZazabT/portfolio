@@ -1,10 +1,34 @@
 import React from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
-
+import { toast } from 'sonner';
 const Contact = () => {
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    
+    // get the data from the target
+    const data = new FormData(e.target);
+    const object = Object.fromEntries(data);
+    const json = JSON.stringify(object);
+
+    //append the access key to the data
+    data.append('access_key', process.env.REACT_APP_WEB3FORMS_ACCESS_KEY);
+    // send the data to the server
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: data
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      toast.success("Message sent successfully");
+      e.target.reset();   
+    }
+    if (!result.success) {
+      toast.error(result.message); 
+    }
+
+    console.log(result);
   };
 
   return (
@@ -23,11 +47,11 @@ const Contact = () => {
         <div className='grid lg:grid-cols-2 gap-12 items-center'>
           {/* Contact Info */}
           <div className='space-y-8'>
-            <div className='glass-effect p-8 rounded-2xl space-y-8 border border-amber-100/30 shadow-[0_0_15px_rgba(251,191,36,0.05)]'>
+            <div className='glass-effect p-8 rounded-2xl space-y-8'>
               {/* Contact Details */}
               <div className='space-y-6'>
                 <div className='flex items-center gap-4 group'>
-                  <div className='w-12 h-12 bg-amber-100/50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
+                  <div className='w-12 h-12  rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
                     <FaEnvelope className='text-2xl text-amber-900' />
                   </div>
                   <div>
@@ -37,7 +61,7 @@ const Contact = () => {
                 </div>
 
                 <div className='flex items-center gap-4 group'>
-                  <div className='w-12 h-12 bg-amber-100/50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
+                  <div className='w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300'>
                     <FaPhone className='text-2xl text-amber-900' />
                   </div>
                   <div>
@@ -76,7 +100,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className='glass-effect p-8 rounded-2xl border border-amber-100/30 shadow-[0_0_15px_rgba(251,191,36,0.05)] hover:shadow-[0_0_25px_rgba(251,191,36,0.1)] transition-all duration-500'>
+          <div className='glass-effect p-8 rounded-2xl transition-all duration-500'>
             <div className='mb-8'>
               <h3 className='text-2xl font-bold text-gray-800 mb-2'>Send Message</h3>
               <div className='w-20 h-1 bg-gradient-to-r from-amber-900 to-amber-600 rounded-full'></div>
@@ -128,6 +152,7 @@ const Contact = () => {
                 <div className='absolute inset-0 bg-gradient-to-r from-amber-800 to-amber-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left'></div>
               </button>
             </form>
+
           </div>
         </div>
       </div>

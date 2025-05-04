@@ -46,6 +46,7 @@ const Service = () => {
       <div className='max-w-7xl mx-auto px-4 sm:px-8'>
         {/* Header */}
         <div className='text-center mb-16 space-y-4'>
+        <span className='text-amber-900 text-sm font-medium tracking-[0.2em] uppercase'>Our Service</span>
           <h2 className='text-4xl sm:text-5xl font-bold text-gray-800'>My Services</h2>
           <p className='text-gray-600 max-w-2xl mx-auto'>
             Providing comprehensive web development solutions tailored to your needs

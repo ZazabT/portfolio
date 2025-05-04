@@ -7,7 +7,7 @@ import Service from './components/service/Service';
 import Project from './components/project/project';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/footer';
-
+import { Toaster } from 'sonner';
 function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -36,30 +36,10 @@ function App() {
       viewport: { once: true }
     },
     projects: {
-      initial: { 
-        y: 100, 
-        opacity: 0, 
-        scale: 0.8, 
-        rotate: -10 
-      },
-      whileInView: { 
-        y: 0, 
-        opacity: 1, 
-        scale: 1, 
-        rotate: 0 
-      },
-      transition: { 
-        duration: 1.2, 
-        type: 'spring', 
-        stiffness: 150, 
-        damping: 15, 
-        mass: 0.8, 
-        bounce: 0.4 
-      },
-      viewport: { 
-        once: true, 
-        margin: '0px 0px -100px 0px' 
-      }
+      initial: { x: -100, opacity: 0, scale: 0.95 },
+      whileInView: { x: 0, opacity: 1, scale: 1 },
+      transition: { duration: 0.9, ease: 'easeOut' },
+      viewport: { once: true }
     },
     contact: {
       initial: { x: 100, opacity: 0, scale: 0.95 },
@@ -77,6 +57,7 @@ function App() {
 
   return (
     <>
+      <Toaster position='top-right' />
       <motion.div
         className="fixed overflow-x-hidden top-0 left-0 right-0 h-1 bg-amber-900 origin-left z-100"
         style={{ scaleX }}
