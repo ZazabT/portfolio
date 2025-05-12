@@ -4,10 +4,18 @@ import airbnb from '../../assets/airbnb.jpg';
 import ethiofund from '../../assets/fund.jpg';
 import tafach from '../../assets/recipe.jpg';
 import voice_assistant from '../../assets/voice_assistent.jpg';
-import tech_blog from '../../assets/tech-blog.jpg';
+import ethio_vibe from '../../assets/eccomerce.png';
 import job_portal from '../../assets/job_portal.jpg';
 const Project = () => {
   const projects = [
+    {
+      title: 'Ethio-vibe',
+      description: 'Full-featured e-commerce platform with product catalog, shopping cart, user authentication, and secure payment integration.',
+      image: ethio_vibe, 
+      tech: ['React', 'Node.js', 'Express', 'Tailwind CSS', 'MongoDB'],
+      github: 'https://github.com/ZazabT/ethiovibe_frontend',
+      live: 'https://ehiovibe.vercel.app/'
+    },
     {
       title: 'Airbnb Clone "Yegna" website',
       description: 'Full-stack accommodation booking platform with features like property listing, booking, and user authentication.',
@@ -17,7 +25,7 @@ const Project = () => {
       live: '#'
     },
     {
-      title: 'EthioFund',
+      title: 'Ethio-fund',
       description: 'Crowdfunding platform for Ethiopian projects with secure payment integration using Chapa payment gateway.',
       image: ethiofund,
       tech: ['Laravel', 'MySQL', 'Chapa', 'Tailwind CSS'],
@@ -40,14 +48,7 @@ const Project = () => {
       github: 'https://github.com/ZazabT/Voice-Assistant',
       live: '#'
     },
-    {
-      title: 'Tech Blog',
-      description: 'Dynamic blog platform with markdown support, comment system, and content management.',
-      image: tech_blog,
-      tech: ['Next.js', 'MongoDB', 'Tailwind CSS', 'NextAuth'],
-      github: 'https://github.com/ZazabT/Blog',
-      live: '#'
-    },
+
       {
       title: 'Job Portal',
       description: 'Modern job listing platform with real-time updates, advanced search, and application tracking system.',
