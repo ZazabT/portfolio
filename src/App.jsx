@@ -18,10 +18,28 @@ function App() {
   });
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [particles, setParticles] = useState([]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
+      
+      // Create particles on mouse move
+      if (Math.random() > 0.7) {
+        const particle = {
+          id: Date.now(),
+          x: e.clientX,
+          y: e.clientY,
+          size: Math.random() * 4 + 2,
+          color: `hsl(${Math.random() * 60 + 200}, 100%, 50%)`
+        };
+        setParticles(prev => [...prev, particle]);
+        
+        // Remove particle after animation
+        setTimeout(() => {
+          setParticles(prev => prev.filter(p => p.id !== particle.id));
+        }, 3000);
+      }
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -92,6 +110,36 @@ function App() {
           filter: "blur(40px)"
         }}
       />
+
+      {/* Particles */}
+      {particles.map(particle => (
+        <motion.div
+          key={particle.id}
+          className="particle"
+          initial={{ 
+            x: particle.x, 
+            y: particle.y,
+            opacity: 0,
+            scale: 0
+          }}
+          animate={{ 
+            y: particle.y - 100,
+            opacity: [0, 1, 0],
+            scale: [0, 1, 0],
+            rotate: 360
+          }}
+          transition={{ duration: 3, ease: "easeOut" }}
+          style={{
+            width: particle.size,
+            height: particle.size,
+            backgroundColor: particle.color,
+            borderRadius: '50%',
+            position: 'fixed',
+            pointerEvents: 'none',
+            zIndex: 0
+          }}
+        />
+      ))}
 
       {/* Progress Bar */}
       <motion.div
