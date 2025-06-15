@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Navbar from './components/navbar/Navbar';
 import Hero from './components/hero/Hero';
@@ -8,6 +8,7 @@ import Project from './components/project/project';
 import Contact from './components/contact/Contact';
 import Footer from './components/footer/footer';
 import { Toaster } from 'sonner';
+
 function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -16,10 +17,21 @@ function App() {
     restDelta: 0.001
   });
 
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   const animations = {
     hero: {
-      initial: { y: 50, opacity: 0, rotate: 5 },
-      whileInView: { y: 0, opacity: 1, rotate: 0 },
+      initial: { y: 50, opacity: 0 },
+      whileInView: { y: 0, opacity: 1 },
       transition: { duration: 1, type: 'spring', stiffness: 80 },
       viewport: { once: true }
     },
@@ -50,7 +62,7 @@ function App() {
     footer: {
       initial: { y: 30, opacity: 0 },
       whileInView: { y: 0, opacity: 1 },
-      transition: { duration: 0.6  , type: 'spring', bounce: 0.8},
+      transition: { duration: 0.6, type: 'spring', bounce: 0.8 },
       viewport: { once: true }
     }
   };
@@ -58,43 +70,68 @@ function App() {
   return (
     <>
       <Toaster position='top-right' />
+      
+      {/* Animated Background */}
+      <div className="fixed inset-0 -z-10 bg-pattern" />
+      
+      {/* Mouse Follow Effect */}
       <motion.div
-        className="fixed overflow-x-hidden top-0 left-0 right-0 h-1 bg-amber-900 origin-left z-100"
+        className="fixed w-96 h-96 rounded-full pointer-events-none -z-10"
+        animate={{
+          x: mousePosition.x - 192,
+          y: mousePosition.y - 192,
+        }}
+        transition={{
+          type: "spring",
+          damping: 30,
+          stiffness: 200,
+          mass: 2
+        }}
+        style={{
+          background: "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%)",
+          filter: "blur(40px)"
+        }}
+      />
+
+      {/* Progress Bar */}
+      <motion.div
+        className="fixed overflow-x-hidden top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] origin-left z-50"
         style={{ scaleX }}
       />
 
       <motion.div 
-        className='mx-auto max-w-7xl px-10 space-y-20'
+        className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-20'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <Navbar />
         
-        <motion.div {...animations.hero}>
-          <Hero />
-        </motion.div>
+        <AnimatePresence>
+          <motion.div {...animations.hero}>
+            <Hero />
+          </motion.div>
 
-        <motion.div {...animations.about}>
-          <About />
-        </motion.div>
+          <motion.div {...animations.about}>
+            <About />
+          </motion.div>
 
-        <motion.div {...animations.services}>
-          <Service />
-        </motion.div>
+          <motion.div {...animations.services}>
+            <Service />
+          </motion.div>
 
-        <motion.div {...animations.projects}>
-          <Project />
-        </motion.div>
+          <motion.div {...animations.projects}>
+            <Project />
+          </motion.div>
 
-        <motion.div {...animations.contact}>
-          <Contact />
-        </motion.div>
+          <motion.div {...animations.contact}>
+            <Contact />
+          </motion.div>
 
-        <motion.div {...animations.footer}>
-          <Footer />
-        </motion.div>
-
+          <motion.div {...animations.footer}>
+            <Footer />
+          </motion.div>
+        </AnimatePresence>
       </motion.div>
     </>
   );
